@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
+<title>Life and Career Skills - LACS - Complete Module</title>
+<style>
+
+/* CSS 2015 Compatible - WebKit Optimized for iPad Air 1st gen iPadOS 12 */
+/* Reset - old school */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #d9dce3;
+  background: #0e0f13;
+  background-color: #0e0f13;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  overflow-x: hidden;
+  /* flex layout 2015 compatible */
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+/* Scrollbar styling for webkit dark */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0e0f13;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2e3a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a4050;
+}
+
+/* MENU BUTTON - for mobile/ipad portrait */
+#menuBtn {
+  display: none;
+  position: fixed;
+  top: 64px;
+  left: 12px;
+  z-index: 1002;
+background-color: rgba(200, 200, 200, 0.25);
+  color: white;
+border: none;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-user-select: none;
+  user-select: none;
+  font-weight: 300;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+              -webkit-appearance: none;
+            -webkit-transition: transform 0.15s ease, background-color 0.2s ease;
+            transition: transform 0.15s ease, background-color 0.2s ease;
+}
+
+#menuBtn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            -webkit-border-radius: 9999px;
+            border-radius: 9999px;
+            padding: 1px;
+            background: -webkit-linear-gradient(
+                180deg,
+                rgba(255, 255, 255, 0.7),
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.7)
+            );
+            background: linear-gradient(
+                180deg,
+                rgba(255, 255, 255, 0.7),
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.7)
+            );
+            -webkit-mask-image: -webkit-linear-gradient(#fff 0 0), -webkit-linear-gradient(#fff 0 0);
+            -webkit-mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+            -webkit-mask-clip: content-box, border-box;
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+#menuBtn:active {
+  background: #252a38;
+}
+
+/* SIDEBAR */
+aside#sidebar {
+  width: 280px;
+  min-width: 280px;
+  background: #15171e;
+  background-color: #15171e;
+  color: #d9dce3;
+  height: 100vh;
+  height: -webkit-fill-available;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding: 20px 14px 30px 14px;
+  border-right: 1px solid #232732;
+  z-index: 1001;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+aside#sidebar h2 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #7a7f8c;
+  margin: 0 0 16px 0;
+  padding: 0 8px 10px 8px;
+  border-bottom: 1px solid #232732;
+}
+aside#sidebar .brand {
+  padding: 6px 8px 18px 8px;
+  margin-bottom: 8px;
+}
+aside#sidebar .brand h1 {
+  font-size: 16px;
+  line-height: 1.2;
+  margin: 0 0 4px 0;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  padding: 0;
+}
+aside#sidebar .brand p {
+  font-size: 11px;
+  color: #7a7f8c;
+  margin: 0;
+  line-height: 1.4;
+}
+
+aside#sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+aside#sidebar ul li {
+  margin: 0 0 2px 0;
+  padding: 0;
+}
+aside#sidebar ul li.section-label {
+  margin-top: 14px;
+  margin-bottom: 6px;
+  padding: 0 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #5a5f6d;
+}
+aside#sidebar ul li a {
+  display: block;
+  color: #a8adbb;
+  text-decoration: none;
+  font-size: 13.5px;
+  line-height: 1.3;
+  padding: 9px 10px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+  min-height: 44px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+aside#sidebar ul li a:hover {
+  background: #1e222e;
+  color: #e6e8ef;
+  border-color: #2a2e3a;
+}
+aside#sidebar ul li a:active {
+  background: #252a38;
+  color: #fff;
+}
+
+/* MAIN CONTENT */
+main {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  margin-left: 280px;
+  padding: 28px 28px 60px 28px;
+  max-width: 1100px;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+main h1.main-title {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 8px 0;
+  padding: 0 0 14px 0;
+  border-bottom: 2px solid #2a2e3a;
+  letter-spacing: -0.3px;
+}
+main .subtitle {
+  color: #7a7f8c;
+  font-size: 13px;
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+/* Cards */
+.card {
+  background: #1a1d26;
+  background-color: #1a1d26;
+  border: 1px solid #252a38;
+  border-radius: 10px;
+  padding: 22px 22px;
+  margin-bottom: 22px;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.card h2 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 14px 0;
+  line-height: 1.3;
+  letter-spacing: -0.2px;
+}
+.card h3 {
+  color: #8ab4ff;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 22px 0 10px 0;
+  line-height: 1.3;
+}
+.card h4 {
+  color: #a8adbb;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin: 16px 0 8px 0;
+}
+.card p {
+  margin: 0 0 12px 0;
+  color: #c2c6d1;
+}
+.card ul, .card ol {
+  margin: 0 0 14px 22px;
+  padding: 0;
+  color: #c2c6d1;
+}
+.card li {
+  margin-bottom: 6px;
+}
+
+/* Term Definitions - from terms.html merged */
+.term-group {
+  margin: 14px 0 18px 0;
+  border: 1px solid #252a38;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #171a23;
+}
+.definition {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  padding: 12px 14px;
+  border-bottom: 1px solid #232732;
+}
+.definition:last-child {
+  border-bottom: none;
+}
+.definition strong {
+  color: #8ab4ff;
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 4px;
+  min-width: 180px;
+  display: block;
+}
+.definition span {
+  color: #c2c6d1;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+@media (min-width: 600px) {
+  .definition {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+  }
+  .definition strong {
+    margin-bottom: 0;
+    margin-right: 14px;
+  }
+}
+
+/* Boxes */
+.box {
+  padding: 16px 16px;
+  margin: 16px 0;
+  border-radius: 0 8px 8px 0;
+  border-left-width: 4px;
+  border-left-style: solid;
+  background-clip: padding-box;
+}
+.box-title {
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.box p {
+  margin-bottom: 8px;
+}
+.box p:last-child {
+  margin-bottom: 0;
+}
+.box ul {
+  margin-left: 18px;
+}
+
+.formula {
+  background: #121a29;
+  background-color: #121a29;
+  border-left-color: #3b82f6;
+  border-top: 1px solid #1e2a44;
+  border-right: 1px solid #1e2a44;
+  border-bottom: 1px solid #1e2a44;
+}
+.formula .box-title { color: #60a5fa; }
+
+.example {
+  background: #111d14;
+  background-color: #111d14;
+  border-left-color: #22c55e;
+  border-top: 1px solid #1a2e1f;
+  border-right: 1px solid #1a2e1f;
+  border-bottom: 1px solid #1a2e1f;
+}
+.example .box-title { color: #4ade80; }
+
+.reminder {
+  background: #1e1a0a;
+  background-color: #1e1a0a;
+  border-left-color: #eab308;
+  border-top: 1px solid #2e2814;
+  border-right: 1px solid #2e2814;
+  border-bottom: 1px solid #2e2814;
+}
+.reminder .box-title { color: #facc15; }
+
+/* Tables - wrapped for iPad scrolling */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0;
+  border-radius: 8px;
+  border: 1px solid #252a38;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1a1d26;
+  font-size: 13.5px;
+  min-width: 400px;
+}
+th, td {
+  padding: 11px 12px;
+  border-bottom: 1px solid #232732;
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  background: #202432;
+  background-color: #202432;
+  color: #e6e8ef;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #2a2e3a;
+}
+tr:last-child td {
+  border-bottom: none;
+}
+tr:nth-child(even) td {
+  background: #1e212c;
+}
+
+/* MathJax dark tweak */
+mjx-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+}
+.MathJax, mjx-container {
+  color: #e6e8ef !important;
+}
+
+/* Overlay for mobile menu */
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 1000;
+  -webkit-backdrop-filter: none;
+}
+#overlay.active {
+  display: block;
+}
+
+/* Responsive - iPad Air 1st gen optimization */
+@media (max-width: 1024px) {
+  #menuBtn {
+    display: block;
+  }
+  aside#sidebar {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    -webkit-transition: -webkit-transform 0.25s ease;
+    transition: transform 0.25s ease;
+    width: 300px;
+    min-width: 300px;
+    box-shadow: 4px 0 24px rgba(0,0,0,0.5);
+  }
+  aside#sidebar.open {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  main {
+    margin-left: 0;
+    padding: 62px 18px 40px 18px;
+  }
+  .card {
+    padding: 18px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  main h1.main-title {
+    font-size: 22px;
+  }
+  .card h2 {
+    font-size: 18px;
+  }
+}
+
+/* iPad Air 1 specific - reduce motion, improve perf */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-transition: none !important;
+    transition: none !important;
+    -webkit-animation: none !important;
+    animation: none !important;
+  }
+}
+
+/* Print */
+@media print {
+  aside#sidebar, #menuBtn, #overlay { display: none !important; }
+  main { margin-left: 0 !important; padding: 0 !important; }
+  body { background: #fff !important; color: #000 !important; }
+  .card { border: 1px solid #ccc !important; background: #fff !important; }
+}
+
+
+/* LACS specific helpers - reuse math theme */
+.bullet{margin:8px 0; padding-left:14px; border-left:2px solid #316488; color:#c2c6d1;}
+.tag{display:inline-block; padding:3px 8px; border-radius:999px; font-size:11px; font-weight:700; letter-spacing:0.5px; background:#1e293b; border:1px solid #2a3a55; color:#8ab4ff; margin:2px 4px 2px 0;}
+
+</style>
+</head>
+<body>
+
+<button id="menuBtn" type="button" aria-label="Open menu">Topics</button>
+<div id="overlay"></div>
+
+<aside id="sidebar">
+  <div class="brand">
+    <h1>Life and Career Skills</h1>
+    <p>LACS • Grade 11 • Dark • CSS 2015 • iPad Air 1 iPadOS 12.5.7 Optimized • Term-Description + Theories • Cleaned from LMS raw</p>
+  </div>
+  <h2>Module Topics</h2>
+  <ul>
+    <li><a href="#emotional-intelligence">1. Emotional Intelligence & Self-Awareness</a></li>
+    <li><a href="#understanding-managing-emotions">2. Understanding & Managing Emotions</a></li>
+    <li><a href="#empathy-perspective">3. Empathy & Perspective Taking</a></li>
+    <li><a href="#effective-communication">4. Effective Communication</a></li>
+    <li><a href="#verbal-nonverbal">5. Verbal & Nonverbal Strategies</a></li>
+    <li><a href="#active-listening-conflict">6. Active Listening & Conflict Resolution</a></li>
+    <li><a href="#teamwork-diversity">7. Teamwork, Collaboration & Cultural Competence</a></li>
+    <li><a href="#personal-values">8. Personal Values & Core Values</a></li>
+    <li><a href="#smart-goals">9. SMART Goals & Goal Setting</a></li>
+    <li><a href="#vision-alignment">10. Personal Vision & Aligning Values with Goals</a></li>
+    <li><a href="#time-management">11. Time Management & Prioritization</a></li>
+    <li><a href="#productivity-distraction">12. Productivity, Distractions & Procrastination</a></li>
+    <li><a href="#advanced-scheduling">13. Advanced Scheduling: Time Blocking & Pomodoro</a></li>
+    <li><a href="#mindfulness-resilience">14. Mindfulness, Resilience & Stress Regulation</a></li>
+    <li><a href="#creative-problem-solving">15. Creative Problem Solving & Decision Making</a></li>
+    <li><a href="#leadership-feedback">16. Leadership Communication & Feedback</a></li>
+    <li><a href="#long-term-momentum">17. Overcoming Obstacles & Long-Term Momentum</a></li>
+
+  </ul>
+</aside>
+
+<main>
+  <h1 class="main-title">Life and Career Skills - Complete Module</h1>
+  <div class="subtitle">Cleaned edition: term - description, theories, vertical lists (SMART, Eisenhower, ABCD, MoSCoW, Pomodoro). Examples, blah blah, code removed. Same dark theme as math.html & science.html — iPad Air 1 optimized.</div>
+
+<section id="emotional-intelligence" class="card">
+<h2>1. Emotional Intelligence & Self-Awareness</h2>
+
+<h3>What is Emotional Intelligence?</h3>
+<p>Emotional Intelligence (EI) is the ability to recognize, understand, and manage emotions in oneself and others, and to use that awareness to guide thought and behavior.</p>
+<div class="term-group">
+<div class="definition"><strong>Emotional Intelligence (EI)</strong><span>Ability to perceive, understand, regulate emotions in self and others for effective decision-making and relationships.</span></div>
+<div class="definition"><strong>Self-Awareness</strong><span>Accurate understanding of one's emotions, strengths, weaknesses, values, motivations.</span></div>
+<div class="definition"><strong>Social Awareness</strong><span>Ability to read others' emotions, empathize, understand social dynamics.</span></div>
+<div class="definition"><strong>Self-Regulation</strong><span>Managing emotional responses, impulse control, adaptability.</span></div>
+</div>
+<h3>Key Components of Self-Awareness</h3>
+<ul>
+<li><strong>Emotional Awareness:</strong> Recognize own emotions as they occur</li>
+<li><strong>Accurate Self-Assessment:</strong> Realistic view of strengths, weaknesses</li>
+<li><strong>Self-Acceptance:</strong> Accepting self including imperfections</li>
+<li><strong>Self-Confidence:</strong> Trust in self-worth and capabilities</li>
+</ul>
+<div class="box reminder"><div class="box-title">Why EI Matters</div>
+<ul>
+<li>✔ Builds stronger relationships and teamwork</li>
+<li>✔ Improves communication and conflict management</li>
+<li>✔ Better decision-making (logic + emotion)</li>
+<li>✔ Leadership, resilience, stress handling</li>
+</ul></div>
+
+</section>
+
+<section id="understanding-managing-emotions" class="card">
+<h2>2. Understanding & Managing Emotions</h2>
+
+<h3>Foundation</h3>
+<p>Emotions are complex psychological and physiological states triggered by stimuli, influencing thoughts, behavior, relationships.</p>
+<div class="term-group">
+<div class="definition"><strong>Primary Emotions</strong><span>Instinctual, universal, automatic responses: fear, anger, sadness, joy, surprise, disgust.</span></div>
+<div class="definition"><strong>Secondary Emotions</strong><span>Complex emotions from primary + thoughts: guilt, shame, jealousy, pride, anxiety.</span></div>
+<div class="definition"><strong>Emotional Labeling</strong><span>Naming emotions precisely (e.g., anxious vs. "bad") to reduce intensity.</span></div>
+<div class="definition"><strong>Body Scan</strong><span>Noticing physical signals: racing heart, trembling, stomach knot as emotional cues.</span></div>
+</div>
+<h3>Managing Emotions - Core Strategies</h3>
+<div class="term-group">
+<div class="definition"><strong>Emotional Regulation</strong><span>Controlling intensity and duration of emotional response.</span></div>
+<div class="definition"><strong>Deep Breathing</strong><span>Slow inhale through nose, hold, slow exhale to calm nervous system.</span></div>
+<div class="definition"><strong>Reappraisal</strong><span>Reinterpreting threat as opportunity for growth.</span></div>
+<div class="definition"><strong>Emotional Expression</strong><span>Healthy outlet: journaling, art, music, talking to trusted person.</span></div>
+</div>
+<div class="box formula"><div class="box-title">Quick Framework - R-I-D-E</div>
+<p><strong>Recognize:</strong> "I'm feeling angry"<br><strong>Identify source:</strong> Why?<br><strong>Decide strategy:</strong> Breathe / Reappraise<br><strong>Express:</strong> Constructively</p>
+</div>
+
+</section>
+
+<section id="empathy-perspective" class="card">
+<h2>3. Empathy & Perspective Taking</h2>
+
+<div class="term-group">
+<div class="definition"><strong>Empathy</strong><span>Feeling with someone, acknowledging and validating their emotions to build trust. Different from sympathy (feeling sorry for).</span></div>
+<div class="definition"><strong>Sympathy</strong><span>Feeling sorry for someone from a distance.</span></div>
+<div class="definition"><strong>Perspective Taking</strong><span>Mental exercise of seeing situation from another's point of view: thoughts, feelings, motivations.</span></div>
+</div>
+<h3>Three Components of Empathy</h3>
+<div class="term-group">
+<div class="definition"><strong>Affective Empathy</strong><span>Feel emotions alongside others.</span></div>
+<div class="definition"><strong>Cognitive Empathy</strong><span>Understand another's thoughts and perspective.</span></div>
+<div class="definition"><strong>Compassionate Empathy</strong><span>Desire to help alleviate suffering, action-oriented.</span></div>
+</div>
+<h3>Developing Empathy - Active Listening</h3>
+<ul>
+<li>Maintain eye contact, open body language</li>
+<li>Ask open-ended questions</li>
+<li>Paraphrase: "So what you're saying is..."</li>
+<li>Pick up nonverbal cues</li>
+<li>Ask: "What would I feel if I were in their shoes?"</li>
+</ul>
+
+</section>
+
+<section id="effective-communication" class="card">
+<h2>4. Effective Communication</h2>
+
+<p>Exchange of information, ideas, feelings that is understood by all parties.</p>
+<div class="term-group">
+<div class="definition"><strong>Effective Communication</strong><span>Clear, concise message + active listening + appropriate response.</span></div>
+<div class="definition"><strong>Clarity</strong><span>Simple language, no jargon, direct message.</span></div>
+<div class="definition"><strong>Nonverbal Communication</strong><span>Body language, facial expression, tone, gestures — must align with words.</span></div>
+<div class="definition"><strong>Active Listening</strong><span>Fully focusing, maintaining eye contact, clarifying.</span></div>
+<div class="definition"><strong>Feedback</strong><span>Constructive response that clarifies understanding.</span></div>
+</div>
+<h3>Key Elements</h3>
+<ul>
+<li><strong>Clarity:</strong> Short, specific, easy to understand</li>
+<li><strong>Nonverbal:</strong> Consistent eye contact, posture, tone</li>
+<li><strong>Empathy:</strong> See from other's perspective</li>
+<li><strong>Active Listening:</strong> Listen to understand, not to reply</li>
+<li><strong>Feedback:</strong> Open to criticism, encourage input</li>
+</ul>
+<div class="box reminder"><div class="box-title">Benefits</div><ul>
+<li>✔ Prevents misunderstandings and conflicts</li>
+<li>✔ Builds trust and rapport</li>
+<li>✔ Improves teamwork and collaboration</li>
+<li>✔ Enhances personal and professional relationships</li>
+</ul></div>
+
+</section>
+
+<section id="verbal-nonverbal" class="card">
+<h2>5. Verbal & Nonverbal Strategies</h2>
+
+<div class="term-group">
+<div class="definition"><strong>Verbal Communication</strong><span>Use of words, spoken or written, to convey message.</span></div>
+<div class="definition"><strong>Nonverbal Communication</strong><span>Communication without words: gestures, posture, facial expression, tone, proxemics.</span></div>
+</div>
+<h3>Verbal Strategies</h3>
+<ul>
+<li>Use simple, concise language</li>
+<li>Be specific and direct</li>
+<li>Adjust tone and pace to audience</li>
+<li>Use "I" statements: "I feel..."</li>
+<li>Avoid filler words</li>
+</ul>
+<h3>Nonverbal Strategies</h3>
+<ul>
+<li>Maintain appropriate eye contact</li>
+<li>Open posture, nodding to show engagement</li>
+<li>Mirror to build rapport (subtle)</li>
+<li>Control facial expressions to match message</li>
+<li>Mind proximity and personal space</li>
+</ul>
+
+</section>
+
+<section id="active-listening-conflict" class="card">
+<h2>6. Active Listening & Conflict Resolution</h2>
+
+<div class="term-group">
+<div class="definition"><strong>Active Listening</strong><span>Full attention to speaker, understanding message beyond words.</span></div>
+<div class="definition"><strong>Emotional Conflict</strong><span>Conflict driven by feelings, values, perceptions rather than facts.</span></div>
+<div class="definition"><strong>Difficult Conversation</strong><span>High-stakes discussion with differing opinions and strong emotions.</span></div>
+</div>
+<h3>Techniques for Active Listening</h3>
+<ul>
+<li>Give undivided attention, minimize distractions</li>
+<li>Use verbal affirmations: "I see", "Go on"</li>
+<li>Paraphrase and summarize</li>
+<li>Ask clarifying questions</li>
+<li>Withhold judgment, observe nonverbals</li>
+</ul>
+<h3>Types of Emotional Conflicts</h3>
+<ul>
+<li><strong>Value Conflicts:</strong> Differing beliefs, ethics</li>
+<li><strong>Relationship Conflicts:</strong> Poor communication, mistrust</li>
+<li><strong>Interest Conflicts:</strong> Competing needs, resources</li>
+</ul>
+<h3>Conflict Resolution Strategies</h3>
+<ul>
+<li>Prepare: clarify goal, anticipate emotions</li>
+<li>Analyze situation from multiple perspectives</li>
+<li>Use collaborative approach: win-win focus</li>
+<li>Regulate emotions during conflict: pause, breathe</li>
+<li>Self-reflection after: what worked, what to improve</li>
+</ul>
+
+</section>
+
+<section id="teamwork-diversity" class="card">
+<h2>7. Teamwork, Collaboration & Cultural Competence</h2>
+
+<div class="term-group">
+<div class="definition"><strong>Teamwork</strong><span>Cooperative effort of group to achieve common goal.</span></div>
+<div class="definition"><strong>Collaboration</strong><span>Working jointly, sharing knowledge and skills.</span></div>
+<div class="definition"><strong>Diversity</strong><span>Differences in culture, ethnicity, gender, perspective, experience.</span></div>
+<div class="definition"><strong>Cultural Competence</strong><span>Ability to understand, respect, and work effectively across cultures.</span></div>
+<div class="definition"><strong>Inclusion</strong><span>Creating environment where all members feel valued and able to contribute.</span></div>
+</div>
+<h3>Principles of Effective Teamwork</h3>
+<ul>
+<li>Clear roles and responsibilities</li>
+<li>Shared goals and accountability</li>
+<li>Open communication and trust</li>
+<li>Respect for diversity</li>
+<li>Constructive feedback</li>
+</ul>
+<h3>Overcoming Barriers</h3>
+<ul>
+<li>Stereotyping and bias — challenge assumptions</li>
+<li>Language barriers — use simple language, visuals</li>
+<li>Communication styles — adapt to direct vs indirect</li>
+<li>Build resilience through debriefs and learning from failure</li>
+</ul>
+
+</section>
+
+<section id="personal-values" class="card">
+<h2>8. Personal Values & Core Values</h2>
+
+<div class="term-group">
+<div class="definition"><strong>Personal Values</strong><span>Core beliefs and principles that guide behavior, decisions, life choices.</span></div>
+<div class="definition"><strong>Core Values</strong><span>Fundamental, deeply held values that form identity and purpose.</span></div>
+</div>
+<h3>Why Values Matter</h3>
+<ul>
+<li>Guide decision-making and priorities</li>
+<li>Provide sense of purpose and direction</li>
+<li>Influence relationships and career choices</li>
+<li>Foundation for motivation and resilience</li>
+</ul>
+<h3>Examples of Values - Vertical List</h3>
+<div class="term-group">
+<div class="definition"><strong>Personal Values</strong><span>Autonomy, Creativity, Integrity, Respect, Honesty, Growth, Balance, Responsibility</span></div>
+<div class="definition"><strong>Relationship Values</strong><span>Empathy, Loyalty, Communication, Trust, Compassion, Support, Understanding</span></div>
+<div class="definition"><strong>Career Values</strong><span>Challenge, Recognition, Teamwork, Work-Life Balance, Leadership, Service, Innovation, Stability</span></div>
+</div>
+<h3>Discovering Core Values - Steps</h3>
+<ol>
+<li>Reflect on peak experiences and what made them meaningful</li>
+<li>Identify moments of anger/frustration — what value was violated?</li>
+<li>List 10 values that resonate, then narrow to top 5</li>
+<li>Define what each value means to you in action</li>
+<li>Test alignment: Are daily actions matching values?</li>
+</ol>
+
+</section>
+
+<section id="smart-goals" class="card">
+<h2>9. SMART Goals & Goal Setting</h2>
+
+<div class="term-group">
+<div class="definition"><strong>Goal Setting</strong><span>Process of identifying desired outcomes and creating plan to achieve them.</span></div>
+</div>
+<h3>SMART Acronym - Vertical List</h3>
+<div class="term-group">
+<div class="definition"><strong>S - Specific</strong><span>Clear, precise, answers What, Why, Who, Where. Not vague. Example: "Improve public speaking" → "Deliver 5-min presentation without notes to 20 people"</span></div>
+<div class="definition"><strong>M - Measurable</strong><span>Quantifiable criteria to track progress. How much? How many? Example: "Write 500 words per day"</span></div>
+<div class="definition"><strong>A - Achievable</strong><span>Realistic given resources, skills, time. Challenging but possible.</span></div>
+<div class="definition"><strong>R - Relevant</strong><span>Aligned with values, long-term vision, and career purpose. Why does it matter?</span></div>
+<div class="definition"><strong>T - Time-bound</strong><span>Deadline, timeframe, milestones. Example: "By Dec 2026" or "3x per week"</span></div>
+</div>
+<h3>Common Pitfalls</h3>
+<ul>
+<li>Goals too broad or vague</li>
+<li>Unrealistic or unachievable</li>
+<li>No clear deadline</li>
+<li>Not aligned with values</li>
+</ul>
+<div class="box example"><div class="box-title">Example - SMART in Practice</div>
+<p><strong>Vague:</strong> "I want to be healthier"<br><strong>SMART:</strong> "Walk 30 minutes, 5 days per week, for next 2 months to improve cardio"</p>
+</div>
+
+</section>
+
+<section id="vision-alignment" class="card">
+<h2>10. Personal Vision & Aligning Values with Goals</h2>
+
+<div class="term-group">
+<div class="definition"><strong>Personal Vision Statement</strong><span>Concise declaration of future self, purpose, and what you want to achieve and become.</span></div>
+<div class="definition"><strong>Values-Goals Alignment</strong><span>Ensuring goals reflect and support core values to sustain motivation.</span></div>
+</div>
+<h3>Key Elements of Vision Statement</h3>
+<ul>
+<li>Future-oriented, inspiring</li>
+<li>Clear values embedded</li>
+<li>Defines impact and legacy</li>
+<li>Concise (1-2 sentences) but meaningful</li>
+<li>Action-oriented</li>
+</ul>
+<h3>Examples - Vertical</h3>
+<ul>
+<li>"To use creativity and empathy to empower youth through education and become a trusted mentor"</li>
+<li>"To live with integrity, grow continuously, and build solutions that serve community with balance"</li>
+<li>"To lead with respect and teamwork, achieving career growth while maintaining work-life balance"</li>
+</ul>
+<h3>Steps to Align Values with Goals</h3>
+<ol>
+<li>List top 5 core values</li>
+<li>Write long-term vision (3-5 years)</li>
+<li>Break vision into SMART goals</li>
+<li>Check each goal: Which value does it serve?</li>
+<li>Adjust or drop goals that conflict with values</li>
+</ol>
+<div class="box formula"><div class="box-title">Practical Alignment Example</div>
+<p>Value: Creativity + Growth<br>
+Step 1: Research local art classes<br>
+Step 2: Sign up for class<br>
+Step 3: Purchase supplies<br>
+Step 4: Commit 2x per week<br>
+→ Goal supports value</p>
+</div>
+
+</section>
+
+<section id="time-management" class="card">
+<h2>11. Time Management & Prioritization</h2>
+
+<div class="term-group">
+<div class="definition"><strong>Time Management</strong><span>Planning and controlling how time is spent to increase effectiveness and productivity.</span></div>
+<div class="definition"><strong>Prioritization</strong><span>Ordering tasks by importance, urgency, deadlines.</span></div>
+</div>
+<h3>Prioritization Techniques - Vertical Lists</h3>
+<h4>Eisenhower Matrix (Urgent-Important)</h4>
+<div class="term-group">
+<div class="definition"><strong>Q1: Urgent & Important - Do First</strong><span>Crises, deadlines, emergencies. Example: Exam tomorrow, sick family member</span></div>
+<div class="definition"><strong>Q2: Important but Not Urgent - Schedule</strong><span>Planning, growth, relationships, prevention. Example: Exercise, studying, vision planning</span></div>
+<div class="definition"><strong>Q3: Urgent but Not Important - Delegate</strong><span>Interruptions, some emails, meetings. Example: Non-essential calls</span></div>
+<div class="definition"><strong>Q4: Not Urgent & Not Important - Eliminate</strong><span>Time wasters, excessive social media, trivia</span></div>
+</div>
+<h4>ABCD Method</h4>
+<div class="term-group">
+<div class="definition"><strong>A - Must Do</strong><span>Most important, serious consequences if not done</span></div>
+<div class="definition"><strong>B - Should Do</strong><span>Important, mild consequences</span></div>
+<div class="definition"><strong>C - Nice to Do</strong><span>No consequences, adds value</span></div>
+<div class="definition"><strong>D - Delegate</strong><span>Can be done by someone else</span></div>
+<div class="definition"><strong>E - Eliminate</strong><span>Remove altogether</span></div>
+</div>
+<h4>MoSCoW Method</h4>
+<div class="term-group">
+<div class="definition"><strong>Must-Have</strong><span>Critical: Book venue, hire caterer</span></div>
+<div class="definition"><strong>Should-Have</strong><span>Important but not critical: Send invitations, plan decorations</span></div>
+<div class="definition"><strong>Could-Have</strong><span>Desirable: Hire photographer, live band</span></div>
+<div class="definition"><strong>Won't-Have (this time)</strong><span>Out of scope: Fireworks, photo booth</span></div>
+</div>
+
+</section>
+
+<section id="productivity-distraction" class="card">
+<h2>12. Productivity, Distractions & Procrastination</h2>
+
+<div class="term-group">
+<div class="definition"><strong>Personal Productivity</strong><span>Efficiency in completing meaningful tasks with quality.</span></div>
+<div class="definition"><strong>Productivity Metrics</strong><span>Measures: tasks completed, time focused, quality, energy levels</span></div>
+<div class="definition"><strong>Distraction</strong><span>Stimulus that diverts attention: notifications, noise, multitasking</span></div>
+<div class="definition"><strong>Procrastination</strong><span>Delaying tasks despite knowing negative consequences, often due to fear, perfectionism, overwhelm</span></div>
+</div>
+<h3>Factors Affecting Productivity</h3>
+<ul>
+<li>Environment: clutter, noise, lighting</li>
+<li>Energy: sleep, nutrition, exercise</li>
+<li>Mindset: motivation, self-talk, clarity</li>
+<li>Tools: unclear goals, too many tools, poor planning</li>
+</ul>
+<h3>Strategies to Boost Productivity</h3>
+<ul>
+<li>Set clear daily top 3 tasks (MIT)</li>
+<li>Single-task, not multitask</li>
+<li>Work in energy peaks (morning for most)</li>
+<li>Use 2-minute rule: if <2 min, do now</li>
+</ul>
+<h3>Managing Distractions</h3>
+<ul>
+<li>Turn off non-essential notifications</li>
+<li>Create dedicated workspace</li>
+<li>Use website blockers during focus blocks</li>
+<li>Batch emails and messages</li>
+</ul>
+<h3>Minimizing Procrastination</h3>
+<ul>
+<li>Break complex into smaller tasks</li>
+<li>Use Pomodoro Technique</li>
+<li>Set 5-minute start rule</li>
+<li>Reward progress, not just completion</li>
+<li>Self-compassion over self-criticism</li>
+</ul>
+
+</section>
+
+<section id="advanced-scheduling" class="card">
+<h2>13. Advanced Scheduling: Time Blocking & Pomodoro</h2>
+
+<div class="term-group">
+<div class="definition"><strong>Time Blocking</strong><span>Scheduling day into blocks dedicated to specific tasks or types of work.</span></div>
+<div class="definition"><strong>Pomodoro Technique</strong><span>Work 25 min focused, 5 min break, repeat. After 4 pomodoros, longer 15-30 min break.</span></div>
+</div>
+<h3>Pomodoro Schedule - Vertical</h3>
+<div class="term-group">
+<div class="definition"><strong>Round 1</strong><span>25 min Focus → 5 min Break</span></div>
+<div class="definition"><strong>Round 2</strong><span>25 min Focus → 5 min Break</span></div>
+<div class="definition"><strong>Round 3</strong><span>25 min Focus → 5 min Break</span></div>
+<div class="definition"><strong>Round 4</strong><span>25 min Focus → 15-30 min Long Break</span></div>
+</div>
+<h3>Advanced Scheduling Strategies</h3>
+<ul>
+<li><strong>Theming days:</strong> Monday - admin, Tuesday - creative, etc.</li>
+<li><strong>Buffer blocks:</strong> 15-30 min between meetings for overflow</li>
+<li><strong>Energy blocking:</strong> Deep work in high energy, shallow in low</li>
+<li><strong>Implementation:</strong> Plan next day evening, review morning</li>
+</ul>
+<div class="box example"><div class="box-title">Example Schedule</div>
+<p>8:00-8:30 Planning (Q2)<br>8:30-10:30 Deep Work - Study (Pomodoro x3)<br>10:30-10:45 Break<br>10:45-12:00 Collaboration / Meetings<br>13:00-14:30 Skill Practice<br>14:30-15:00 Buffer / Reflection</p>
+</div>
+
+</section>
+
+<section id="mindfulness-resilience" class="card">
+<h2>14. Mindfulness, Resilience & Stress Regulation</h2>
+
+<div class="term-group">
+<div class="definition"><strong>Mindfulness</strong><span>Present-moment awareness without judgment — thoughts, emotions, sensations observed.</span></div>
+<div class="definition"><strong>Resilience</strong><span>Ability to bounce back from adversity, adapt, grow through challenges.</span></div>
+<div class="definition"><strong>Growth Mindset (Pag-unlad ng Isipan)</strong><span>Belief abilities can be developed through effort, learning, persistence. Opposite of fixed mindset.</span></div>
+<div class="definition"><strong>Fixed Mindset</strong><span>Belief abilities are static, effort is futile.</span></div>
+</div>
+<h3>Pag-unlad ng Isipan - Key Concepts (from LMS Tagalog)</h3>
+<ul>
+<li><strong>Konsepto ng Katatagan:</strong> Ability to withstand pressure, recover</li>
+<li><strong>Growth Mindset Practices:</strong> Magkaroon ng growth mindset, Magtrabaho nang mas mahusay, Huwag matakot sa pagsubok, Magtiwala sa sarili</li>
+<li><strong>Paano Magkaroon ng Pag-unlad:</strong> Seek feedback, learn from failure, celebrate effort not just result, reflective journaling</li>
+</ul>
+<h3>Stress & Emotional Regulation</h3>
+<div class="term-group">
+<div class="definition"><strong>Stress</strong><span>Body's response to demand or threat — can be eustress (positive) or distress (negative).</span></div>
+<div class="definition"><strong>Eustress</strong><span>Motivating, short-term stress that improves performance</span></div>
+<div class="definition"><strong>Distress</strong><span>Overwhelming, chronic stress that harms health</span></div>
+</div>
+<ul>
+<li>Mindfulness meditation 5-10 min daily</li>
+<li>Body scan and breathing</li>
+<li>Cognitive reappraisal</li>
+<li>Social support and self-compassion</li>
+</ul>
+<div class="box reminder"><div class="box-title">Mindfulness-Resilience Link</div><p>✔ Mindfulness increases awareness → better regulation → resilience. Resilience enables sustained growth mindset.</p></div>
+
+</section>
+
+<section id="creative-problem-solving" class="card">
+<h2>15. Creative Problem Solving & Decision Making</h2>
+
+<div class="term-group">
+<div class="definition"><strong>Creative Problem Solving</strong><span>Finding novel, useful solutions beyond conventional approaches.</span></div>
+<div class="definition"><strong>Decision Making</strong><span>Choosing among alternatives based on values, information, consequences.</span></div>
+</div>
+<h3>Creative Problem Solving - Steps</h3>
+<ol>
+<li><strong>Clarify problem:</strong> What is root cause? Reframe</li>
+<li><strong>Generate ideas:</strong> Brainstorm without judgment, quantity over quality</li>
+<li><strong>Develop solutions:</strong> Combine, refine, test feasibility</li>
+<li><strong>Implement and evaluate:</strong> Try, reflect, iterate</li>
+</ol>
+<h3>Decision Making Tools</h3>
+<ul>
+<li>Pros-Cons list with values weighting</li>
+<li>Decision matrix for multiple options</li>
+<li>Consider long-term vs short-term impact</li>
+<li>Consult diverse perspectives</li>
+</ul>
+<div class="box formula"><div class="box-title">Quick Check - 4 Questions</div><p>1. Does it align with core values?<br>2. What are risks and opportunities?<br>3. What would I advise a friend?<br>4. Can I live with this decision in 1 year?</p></div>
+
+</section>
+
+<section id="leadership-feedback" class="card">
+<h2>16. Leadership Communication & Feedback</h2>
+
+<div class="term-group">
+<div class="definition"><strong>Leadership Communication</strong><span>Clear, inspiring, accountable communication that aligns team toward vision.</span></div>
+<div class="definition"><strong>Feedback</strong><span>Information about performance to guide growth — can be reinforcing or corrective.</span></div>
+</div>
+<h3>Leadership Communication Techniques</h3>
+<ul>
+<li>Use simple, concise language, avoid jargon</li>
+<li>Storytelling to inspire and contextualize</li>
+<li>Transparency about why and what</li>
+<li>Regular check-ins, not just annual reviews</li>
+<li>Model active listening</li>
+</ul>
+<h3>Feedback Techniques - Vertical</h3>
+<div class="term-group">
+<div class="definition"><strong>SBI Model</strong><span>Situation → Behavior → Impact. Example: "In meeting (S), you interrupted (B), team felt unheard (I)"</span></div>
+<div class="definition"><strong>Feedforward</strong><span>Focus on future improvement, not past blame</span></div>
+<div class="definition"><strong>Reinforcing Feedback</strong><span>Acknowledge strengths specifically to repeat</span></div>
+<div class="definition"><strong>Corrective Feedback</strong><span>Address gap, offer support and clear next step</span></div>
+</div>
+<h3>Overcoming Barriers</h3>
+<ul>
+<li>Fear of conflict — reframe as growth opportunity</li>
+<li>Technology overload — choose right channel (face-to-face for sensitive)</li>
+<li>Being open to feedback and willing to learn</li>
+</ul>
+
+</section>
+
+<section id="long-term-momentum" class="card">
+<h2>17. Overcoming Obstacles & Long-Term Momentum</h2>
+
+<div class="term-group">
+<div class="definition"><strong>Obstacle</strong><span>Barrier that hinders progress — internal (fear, doubt) or external (resources, time).</span></div>
+<div class="definition"><strong>Setback</strong><span>Temporary reversal of progress, opportunity to learn.</span></div>
+<div class="definition"><strong>Momentum</strong><span>Sustained motion toward goals through consistent small actions.</span></div>
+<div class="definition"><strong>Grit & Perseverance</strong><span>Passion + persistence for long-term goals despite difficulty.</span></div>
+</div>
+<h3>Strategies to Overcome Obstacles</h3>
+<ul>
+<li>Break complex problems into smaller manageable tasks</li>
+<li>Seek support, mentorship, guidance</li>
+<li>Practice self-care and self-compassion</li>
+<li>Reframe failure as data: "What did I learn?"</li>
+<li>Develop contingency plans</li>
+</ul>
+<h3>Maintaining Long-Term Momentum - Steps</h3>
+<ol>
+<li><strong>Identify long-term objective</strong> — clear vision</li>
+<li><strong>Break into smaller tasks</strong> — monthly, weekly milestones</li>
+<li><strong>Establish timeline</strong> — realistic deadlines</li>
+<li><strong>Create tracking system</strong> — journal, app, habit tracker</li>
+<li><strong>Review and adjust</strong> — weekly review</li>
+</ol>
+<h3>Creating Supportive Environment</h3>
+<ul>
+<li>Join community or group related to goal</li>
+<li>Find mentor or accountability partner</li>
+<li>Eliminate distractions (notifications off)</li>
+<li>Establish consistent routine or schedule</li>
+<li>Celebrate small wins and accomplishments</li>
+</ul>
+<div class="box reminder"><div class="box-title">Growth Loop</div><p>✔ View challenges as opportunities → Analyze failures → Growth mindset → Plan for obstacles → Self-compassion → Sustain motivation</p></div>
+
+</section>
+
+
+
+  <div class="card" style="text-align:center; padding: 16px;">
+    <p style="margin:0; color:#7a7f8c; font-size:12px;">End of Module • Life and Career Skills (LACS) • Cleaned from raw LMS copy-paste • Term-Description + Theories only • Same theme as math & science • © 2026</p>
+  </div>
+
+</main>
+
+<script>
+// iPad Air 1 / iOS12 ES5
+(function(){
+  var sidebar = document.getElementById('sidebar');
+  var menuBtn = document.getElementById('menuBtn');
+  var overlay = document.getElementById('overlay');
+  function openMenu(){
+    if(sidebar){ sidebar.className = sidebar.className.replace(' open','') + ' open'; if(sidebar.classList) sidebar.classList.add('open'); else sidebar.className += ' open'; }
+    if(overlay){ overlay.className = 'active'; overlay.style.display = 'block'; }
+  }
+  function closeMenu(){
+    if(sidebar){ if(sidebar.classList) sidebar.classList.remove('open'); sidebar.className = sidebar.className.replace(' open','').replace('open','').trim(); }
+    if(overlay){ overlay.className = ''; overlay.style.display = 'none'; }
+  }
+  function toggleMenu(){ if(sidebar && sidebar.className.indexOf('open') !== -1) closeMenu(); else openMenu(); }
+  if(menuBtn){
+    menuBtn.addEventListener('click', function(e){ e.preventDefault(); toggleMenu(); }, false);
+    menuBtn.addEventListener('touchend', function(e){ e.preventDefault(); toggleMenu(); }, false);
+  }
+  if(overlay){
+    overlay.addEventListener('click', closeMenu, false);
+    overlay.addEventListener('touchend', function(e){ e.preventDefault(); closeMenu(); }, false);
+  }
+  var links = sidebar ? sidebar.getElementsByTagName('a') : [];
+  for(var i=0;i<links.length;i++){
+    links[i].addEventListener('click', function(){
+      if(window.innerWidth <= 1024) setTimeout(closeMenu, 150);
+    }, false);
+  }
+  var allAnchors = document.querySelectorAll('a[href^="#"]');
+  for(var j=0;j<allAnchors.length;j++){
+    allAnchors[j].addEventListener('click', function(e){
+      var href = this.getAttribute('href');
+      if(href.length > 1){
+        var target = document.getElementById(href.substring(1));
+        if(target){
+          e.preventDefault();
+          var top = target.offsetTop - 10;
+          if(window.innerWidth <= 1024) top -= 50;
+          window.scrollTo(0, top);
+          if(history.pushState) history.pushState(null, null, href);
+        }
+      }
+    }, false);
+  }
+})();
+</script>
+</body>
+</html>

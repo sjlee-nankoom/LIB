@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
+<title>General Mathematics - Complete Module</title>
+<style>
+/* CSS 2015 Compatible - WebKit Optimized for iPad Air 1st gen iPadOS 12 */
+/* Reset - old school */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #d9dce3;
+  background: #0e0f13;
+  background-color: #0e0f13;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  overflow-x: hidden;
+  /* flex layout 2015 compatible */
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+/* Scrollbar styling for webkit dark */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0e0f13;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2e3a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a4050;
+}
+/* MENU BUTTON - for mobile/ipad portrait */
+#menuBtn {
+  display: none;
+  position: fixed;
+  top: 64px;
+  left: 12px;
+  z-index: 1002;
+background-color: rgba(200, 200, 200, 0.25);
+  color: white;
+border: none;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-user-select: none;
+  user-select: none;
+    font-weight: 300;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+              -webkit-appearance: none;
+            -webkit-transition: transform 0.15s ease, background-color 0.2s ease;
+            transition: transform 0.15s ease, background-color 0.2s ease;
+}
+
+#menuBtn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            -webkit-border-radius: 9999px;
+            border-radius: 9999px;
+            padding: 1px;
+            background: -webkit-linear-gradient(
+                180deg,
+                rgba(255, 255, 255, 0.7),
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.7)
+            );
+            background: linear-gradient(
+                180deg,
+                rgba(255, 255, 255, 0.7),
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.7)
+            );
+            -webkit-mask-image: -webkit-linear-gradient(#fff 0 0), -webkit-linear-gradient(#fff 0 0);
+            -webkit-mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+            -webkit-mask-clip: content-box, border-box;
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+#menuBtn:active {
+  background: #252a38;
+}
+
+/* SIDEBAR */
+aside#sidebar {
+  width: 280px;
+  min-width: 280px;
+  background: #15171e;
+  background-color: #15171e;
+  color: #d9dce3;
+  height: 100vh;
+  height: -webkit-fill-available;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding: 20px 14px 30px 14px;
+  border-right: 1px solid #232732;
+  z-index: 1001;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+aside#sidebar h2 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #7a7f8c;
+  margin: 0 0 16px 0;
+  padding: 0 8px 10px 8px;
+  border-bottom: 1px solid #232732;
+}
+aside#sidebar .brand {
+  padding: 6px 8px 18px 8px;
+  margin-bottom: 8px;
+}
+aside#sidebar .brand h1 {
+  font-size: 16px;
+  line-height: 1.2;
+  margin: 0 0 4px 0;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  padding: 0;
+}
+aside#sidebar .brand p {
+  font-size: 11px;
+  color: #7a7f8c;
+  margin: 0;
+  line-height: 1.4;
+}
+
+aside#sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+aside#sidebar ul li {
+  margin: 0 0 2px 0;
+  padding: 0;
+}
+aside#sidebar ul li.section-label {
+  margin-top: 14px;
+  margin-bottom: 6px;
+  padding: 0 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #5a5f6d;
+}
+aside#sidebar ul li a {
+  display: block;
+  color: #a8adbb;
+  text-decoration: none;
+  font-size: 13.5px;
+  line-height: 1.3;
+  padding: 9px 10px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+  min-height: 44px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+aside#sidebar ul li a:hover {
+  background: #1e222e;
+  color: #e6e8ef;
+  border-color: #2a2e3a;
+}
+aside#sidebar ul li a:active {
+  background: #252a38;
+  color: #fff;
+}
+
+/* MAIN CONTENT */
+main {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  margin-left: 280px;
+  padding: 28px 28px 60px 28px;
+  max-width: 1100px;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+main h1.main-title {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 8px 0;
+  padding: 0 0 14px 0;
+  border-bottom: 2px solid #2a2e3a;
+  letter-spacing: -0.3px;
+}
+main .subtitle {
+  color: #7a7f8c;
+  font-size: 13px;
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+/* Cards */
+.card {
+  background: #1a1d26;
+  background-color: #1a1d26;
+  border: 1px solid #252a38;
+  border-radius: 10px;
+  padding: 22px 22px;
+  margin-bottom: 22px;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.card h2 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 14px 0;
+  line-height: 1.3;
+  letter-spacing: -0.2px;
+}
+.card h3 {
+  color: #8ab4ff;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 22px 0 10px 0;
+  line-height: 1.3;
+}
+.card h4 {
+  color: #a8adbb;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin: 16px 0 8px 0;
+}
+.card p {
+  margin: 0 0 12px 0;
+  color: #c2c6d1;
+}
+.card ul, .card ol {
+  margin: 0 0 14px 22px;
+  padding: 0;
+  color: #c2c6d1;
+}
+.card li {
+  margin-bottom: 6px;
+}
+
+/* Term Definitions - from terms.html merged */
+.term-group {
+  margin: 14px 0 18px 0;
+  border: 1px solid #252a38;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #171a23;
+}
+.definition {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  padding: 12px 14px;
+  border-bottom: 1px solid #232732;
+}
+.definition:last-child {
+  border-bottom: none;
+}
+.definition strong {
+  color: #8ab4ff;
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 4px;
+  min-width: 180px;
+  display: block;
+}
+.definition span {
+  color: #c2c6d1;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+@media (min-width: 600px) {
+  .definition {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+  }
+  .definition strong {
+    margin-bottom: 0;
+    margin-right: 14px;
+  }
+}
+
+/* Boxes */
+.box {
+  padding: 16px 16px;
+  margin: 16px 0;
+  border-radius: 0 8px 8px 0;
+  border-left-width: 4px;
+  border-left-style: solid;
+  background-clip: padding-box;
+}
+.box-title {
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.box p {
+  margin-bottom: 8px;
+}
+.box p:last-child {
+  margin-bottom: 0;
+}
+.box ul {
+  margin-left: 18px;
+}
+
+.formula {
+  background: #121a29;
+  background-color: #121a29;
+  border-left-color: #3b82f6;
+  border-top: 1px solid #1e2a44;
+  border-right: 1px solid #1e2a44;
+  border-bottom: 1px solid #1e2a44;
+}
+.formula .box-title { color: #60a5fa; }
+
+.example {
+  background: #111d14;
+  background-color: #111d14;
+  border-left-color: #22c55e;
+  border-top: 1px solid #1a2e1f;
+  border-right: 1px solid #1a2e1f;
+  border-bottom: 1px solid #1a2e1f;
+}
+.example .box-title { color: #4ade80; }
+
+.reminder {
+  background: #1e1a0a;
+  background-color: #1e1a0a;
+  border-left-color: #eab308;
+  border-top: 1px solid #2e2814;
+  border-right: 1px solid #2e2814;
+  border-bottom: 1px solid #2e2814;
+}
+.reminder .box-title { color: #facc15; }
+
+/* Tables - wrapped for iPad scrolling */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0;
+  border-radius: 8px;
+  border: 1px solid #252a38;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1a1d26;
+  font-size: 13.5px;
+  min-width: 400px;
+}
+th, td {
+  padding: 11px 12px;
+  border-bottom: 1px solid #232732;
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  background: #202432;
+  background-color: #202432;
+  color: #e6e8ef;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #2a2e3a;
+}
+tr:last-child td {
+  border-bottom: none;
+}
+tr:nth-child(even) td {
+  background: #1e212c;
+}
+
+/* MathJax dark tweak */
+mjx-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+}
+.MathJax, mjx-container {
+  color: #e6e8ef !important;
+}
+
+/* Overlay for mobile menu */
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 1000;
+  -webkit-backdrop-filter: none;
+}
+#overlay.active {
+  display: block;
+}
+
+/* Responsive - iPad Air 1st gen optimization */
+@media (max-width: 1024px) {
+  #menuBtn {
+    display: block;
+  }
+  aside#sidebar {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    -webkit-transition: -webkit-transform 0.25s ease;
+    transition: transform 0.25s ease;
+    width: 300px;
+    min-width: 300px;
+    box-shadow: 4px 0 24px rgba(0,0,0,0.5);
+  }
+  aside#sidebar.open {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  main {
+    margin-left: 0;
+    padding: 62px 18px 40px 18px;
+  }
+  .card {
+    padding: 18px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  main h1.main-title {
+    font-size: 22px;
+  }
+  .card h2 {
+    font-size: 18px;
+  }
+}
+
+/* iPad Air 1 specific - reduce motion, improve perf */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-transition: none !important;
+    transition: none !important;
+    -webkit-animation: none !important;
+    animation: none !important;
+  }
+}
+
+/* Print */
+@media print {
+  aside#sidebar, #menuBtn, #overlay { display: none !important; }
+  main { margin-left: 0 !important; padding: 0 !important; }
+  body { background: #fff !important; color: #000 !important; }
+  .card { border: 1px solid #ccc !important; background: #fff !important; }
+}
+</style>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']],
+    processEscapes: true,
+    tags: 'none'
+  },
+  options: {
+    skipHtmlTags: ['script','noscript','style','textarea','pre','code'],
+    ignoreHtmlClass: 'no-mathjax',
+    processHtmlClass: 'mathjax'
+  },
+  chtml: {
+    scale: 0.92,
+    mtextInheritFont: true
+  },
+  loader: {load: ['[tex]/ams']},
+  startup: {
+    typeset: false
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<button id="menuBtn" type="button" aria-label="Open menu">Topics</button>
+<div id="overlay"></div>
+
+<aside id="sidebar">
+  <div class="brand">
+    <h1>General Mathematics</h1>
+    <p>AMAC, SSHS, Grade 11 — Personal Finance, Patterns, Sequences & Series — Complete Module — Dark • iPad Optimized</p>
+  </div>
+  <h2>Module Topics</h2>
+  <ul>
+    <li class="section-label">Personal Finance</li>
+    <li><a href="#personal-finance">1. Personal Finance Basics</a></li>
+    <li><a href="#income-salary">2. Income, Salary & Wages</a></li>
+    <li><a href="#commission-piecework">3. Commission & Piecework</a></li>
+    <li><a href="#mixed-earnings">4. Mixed Earnings</a></li>
+    <li><a href="#percentage">5. Percentage Increase & Decrease</a></li>
+    <li><a href="#markups-discounts">6. Mark-Ups & Discounts</a></li>
+    <li><a href="#vat">7. Value-Added Tax (VAT)</a></li>
+    <li><a href="#profit-loss">8. Profit and Loss</a></li>
+    <li><a href="#gross-net">9. Gross Income & Net Income</a></li>
+    <li><a href="#payroll">10. Payroll Analysis</a></li>
+    <li class="section-label">Patterns & Sequences</li>
+    <li><a href="#patterns">11. Patterns (Numerical & Visual)</a></li>
+    <li><a href="#fibonacci">12. Fibonacci Sequence</a></li>
+    <li><a href="#sequences-series">13. Sequences and Series</a></li>
+    <li><a href="#arithmetic">14. Arithmetic Sequence & Series</a></li>
+    <li><a href="#geometric">15. Geometric Sequence & Series</a></li>
+  </ul>
+</aside>
+
+<main>
+  <h1 class="main-title">General Mathematics Module</h1>
+  <div class="subtitle">Complete combined edition: formulas + terms + definitions + examples. Dark mode • CSS 2015 compatible • WebKit optimized for iPad Air 1st gen iPadOS 12.5.7. All MathJax formulas use \( \) and $$ delimiters to avoid ₱ conflicts.</div>
+
+  <!-- 1. Personal Finance Basics -->
+  <section id="personal-finance" class="card">
+    <h2>1. Personal Finance Basics</h2>
+    <h3>What is Personal Finance?</h3>
+    <p>Personal finance refers to the management of an individual's money, including earning, spending, saving, investing, and planning for future financial goals.</p>
+
+    <h3>Why is it important?</h3>
+    <ul>
+      <li>Meet daily needs and expenses.</li>
+      <li>Achieve short-term and long-term goals.</li>
+      <li>Avoid unnecessary debt.</li>
+      <li>Prepare for emergencies.</li>
+      <li>Build financial security and independence.</li>
+    </ul>
+
+    <h3>Key Terms & Definitions</h3>
+    <div class="term-group">
+      <div class="definition"><strong>Income</strong><span>Money received by an individual in exchange for work, services, investments, or ownership of assets.</span></div>
+      <div class="definition"><strong>Expenses</strong><span>Money spent on needs and wants.</span></div>
+      <div class="definition"><strong>Savings</strong><span>Money set aside for future use.</span></div>
+      <div class="definition"><strong>Investments</strong><span>Money used to generate additional income.</span></div>
+      <div class="definition"><strong>Financial Planning</strong><span>The process of setting financial goals and creating strategies to achieve them.</span></div>
+    </div>
+
+    <h3>Key Areas of Personal Finance</h3>
+    <ul>
+      <li><strong>Income</strong> – money earned from various sources.</li>
+      <li><strong>Expenses</strong> – money spent on needs and wants.</li>
+      <li><strong>Savings</strong> – money set aside for future use.</li>
+      <li><strong>Investments</strong> – money used to generate additional income.</li>
+      <li><strong>Financial Planning</strong> – organizing finances to achieve goals.</li>
+    </ul>
+
+    <h3>Common Sources of Income</h3>
+    <div class="table-wrap"><table>
+      <tr><th>Source</th><th>Description</th></tr>
+      <tr><td>Salary/Wages</td><td>Payment received from employment</td></tr>
+      <tr><td>Business Income</td><td>Profit earned from operating a business</td></tr>
+      <tr><td>Freelance Income</td><td>Earnings from contractual or project-based work</td></tr>
+      <tr><td>Commission</td><td>Income based on sales performance</td></tr>
+      <tr><td>Allowance</td><td>Money given regularly by parents or guardians</td></tr>
+      <tr><td>Rental Income</td><td>Earnings from renting property</td></tr>
+      <tr><td>Dividends</td><td>Share of profits from investments</td></tr>
+      <tr><td>Interest Income</td><td>Earnings from money deposited or invested</td></tr>
+    </table></div>
+
+    <h3>Earned vs. Passive Income</h3>
+    <div class="table-wrap"><table>
+      <tr><th>Earned Income</th><th>Passive Income</th></tr>
+      <tr><td>Requires active work</td><td>Requires minimal ongoing work</td></tr>
+      <tr><td>Time-based earnings</td><td>Asset-based earnings</td></tr>
+      <tr><td>Immediate compensation</td><td>Long-term income potential</td></tr>
+      <tr><td>Examples: Salary, Wages, Professional Fees, Freelance</td><td>Examples: Rent, Dividends, Royalties, Interest</td></tr>
+    </table></div>
+
+    <h3>What is Financial Planning?</h3>
+    <p>Financial planning is the process of setting financial goals and creating strategies to achieve them.</p>
+    <ul>
+      <li><strong>Benefits:</strong> Helps control spending, encourages regular saving habits, prepares for emergencies, reduces financial stress, supports educational/career goals, and promotes financial independence.</li>
+      <li><strong>Basic Steps:</strong> Assess current financial situation, set financial goals, create a budget, save regularly, monitor and adjust plans as needed.</li>
+    </ul>
+
+    <div class="box reminder">
+      <div class="box-title">Financial Planning Steps</div>
+      <p>✔ 1) Assess current situation 2) Set goals 3) Create a budget 4) Save regularly 5) Monitor and adjust.</p>
+    </div>
+  </section>
+
+  <!-- 2. Income, Salary & Wages -->
+  <section id="income-salary" class="card">
+    <h2>2. Income, Salary & Wages</h2>
+    <p>Income is money received by an individual in exchange for work, services, investments, or ownership of assets.</p>
+
+    <div class="term-group">
+      <div class="definition"><strong>Salary</strong><span>The fixed amount of money paid to an employee for work performed (Annual, Monthly, Weekly).</span></div>
+      <div class="definition"><strong>Hourly Wage</strong><span>The amount of money earned for every hour worked.</span></div>
+    </div>
+
+    <h3>Salary</h3>
+    <p>Salary is the fixed amount of money paid to an employee for work performed. Employers may express salary in different ways: Annual, Monthly, or Weekly.</p>
+
+    <div class="box formula">
+      <div class="box-title">Formula: Salary Conversions</div>
+      <p>$$ \text{Monthly Salary} = \frac{\text{Annual Salary}}{12} $$</p>
+      <p>$$ \text{Annual Salary} = \text{Monthly Salary} \times 12 $$</p>
+    </div>
+
+    <div class="box example">
+      <div class="box-title">Examples - Salary Conversion</div>
+      <p><strong>Example 1:</strong> A teacher earns ₱360,000 annually. Find the monthly salary.</p>
+      <p>$$ \text{Monthly Salary} = \frac{360,000}{12} = \text{₱}30,000 $$</p>
+      <p><em>Answer:</em> The teacher earns ₱30,000 per month.</p>
+      <br>
+      <p><strong>Example 2:</strong> An office worker earns ₱25,000 monthly. Find the annual salary.</p>
+      <p>$$ \text{Annual Salary} = 25,000 \times 12 = \text{₱}300,000 $$</p>
+    </div>
+
+    <div class="box reminder">
+      <div class="box-title">Important Reminders - Salary</div>
+      <ul>
+        <li>✔ Divide by 12 when converting annual salary to monthly salary.</li>
+        <li>✔ Multiply by 12 when converting monthly salary to annual salary.</li>
+        <li>✔ Write the correct unit (monthly salary or annual salary) in your answer.</li>
+      </ul>
+    </div>
+
+    <h3>Hourly Wage & Overtime</h3>
+    <p>Many employees are paid according to the number of hours they work. This payment system is called an hourly wage.</p>
+
+    <div class="box formula">
+      <div class="box-title">Formulas: Wages & Overtime</div>
+      <p>$$ \text{Daily Wage} = \text{Hourly Rate} \times \text{Hours Worked Per Day} $$</p>
+      <p>$$ \text{Weekly Wage} = \text{Daily Wage} \times \text{Number of Working Days} $$</p>
+      <p>$$ \text{Weekly Wage} = \text{Daily Wage} \times \text{Working Days} $$</p>
+      <p>$$ \text{Overtime Rate} = \text{Regular Hourly Rate} \times 1.25 $$ (Assuming overtime is paid at 125%)</p>
+      <p>$$ \text{Overtime Pay} = \text{Overtime Rate} \times \text{Overtime Hours} $$</p>
+    </div>
+
+    <div class="box example">
+      <div class="box-title">Examples - Wages & Overtime</div>
+      <p><strong>Wage Example:</strong> Anna works in a café and earns ₱125 per hour. She works 8 hours per day for 5 days. Find her weekly earnings.</p>
+      <p>$$ \text{Daily Wage} = 125 \times 8 = 1,000 $$</p>
+      <p>$$ \text{Weekly Wage} = 1,000 \times 5 = \text{₱}5,000 $$</p>
+      <br>
+      <p><strong>Hourly Example:</strong> A worker earns ₱100 per hour, works 8 hours a day, and 5 days a week.</p>
+      <p>$$ \text{Daily Wage} = 100 \times 8 = \text{₱}800 $$</p>
+      <p>$$ \text{Weekly Wage} = 800 \times 5 = \text{₱}4,000 $$</p>
+      <br>
+      <p><strong>Overtime Example:</strong> A worker earns ₱160 per hour. Find the overtime rate.</p>
+      <p>$$ \text{Overtime Rate} = 160 \times 1.25 = \text{₱}200 \text{ per hour} $$</p>
+    </div>
+
+    <h3>Overtime Pay Detail</h3>
+    <p>Employees are usually paid for their regular working hours. Overtime hours are additional hours worked beyond the normal schedule. For this module, we assume overtime is paid at 125% (or 1.25) of the regular hourly rate.</p>
+  </section>
+
+  <!-- 3. Commission & Piecework -->
+  <section id="commission-piecework" class="card">
+    <h2>3. Commission & Piecework</h2>
+
+    <div class="term-group">
+      <div class="definition"><strong>Commission</strong><span>A payment earned based on a percentage of total sales.</span></div>
+      <div class="definition"><strong>Piecework</strong><span>A method of payment where workers are paid according to the number of units produced.</span></div>
+    </div>
+
+    <h3>Commission</h3>
+    <p>A commission is a payment earned based on a percentage of total sales. Before computing commissions, convert the percentage to a decimal (e.g., 5% = 0.05).</p>
+
+    <div class="box formula">
+      <div class="box-title">Formulas: Commission</div>
+      <p>$$ \text{Commission} = \text{Sales Amount} \times \text{Commission Rate} $$</p>
+      <p>$$ \text{Total Earnings} = \text{Salary} + \text{Commission} $$</p>
+      <p>$$ \text{Sales Amount} = \frac{\text{Commission}}{\text{Commission Rate}} $$</p>
+    </div>
+
+    <div class="box example">
+      <div class="box-title">Examples: Commission</div>
+      <p><strong>Example 1:</strong> A salesperson sold products worth ₱50,000 and receives a 5% commission.</p>
+      <p>Step 1: 5% = 0.05</p>
+      <p>$$ \text{Commission} = 50,000 \times 0.05 = \text{₱}2,500 $$</p>
+      <br>
+      <p><strong>Example 2:</strong> A salesperson earned ₱3,000 commission at a 6% commission rate. Find the sales amount.</p>
+      <p>$$ \text{Sales Amount} = \frac{3,000}{0.06} = \text{₱}50,000 $$</p>
+    </div>
+
+    <h3>Piecework</h3>
+    <p>Piecework is a method of payment where workers are paid according to the number of units produced or tasks completed.</p>
+
+    <div class="box formula">
+      <div class="box-title">Formulas: Piecework</div>
+      <p>$$ \text{Earnings} = \text{Piece Rate} \times \text{Number of Units Produced} $$</p>
+      <p>$$ \text{Number of Units Produced} = \frac{\text{Earnings}}{\text{Piece Rate}} $$</p>
+      <p>$$ \text{Piece Rate} = \frac{\text{Earnings}}{\text{Number of Units Produced}} $$</p>
+    </div>
+
+    <div class="box example">
+      <div class="box-title">Example: Piecework</div>
+      <p><strong>Example 1:</strong> A worker earns ₱8 for every tote bag produced. If the worker produces 50 tote bags, how much will the worker earn?</p>
+      <p>$$ \text{Earnings} = 8 \times 50 = \text{₱}400 $$</p>
+    </div>
+
+    <div class="box reminder">
+      <div class="box-title">Quick Tips</div>
+      <p>✔ Always convert percentages into decimals before multiplying (e.g., 12% = 0.12).</p>
+      <p>✔ <strong>Mixed Earnings:</strong> Some workers receive a combination. Total Earnings = Salary + Wages + Commission + Overtime Pay</p>
+    </div>
+  </section>
+
+  <!-- 4. Mixed Earnings -->
+  <section id="mixed-earnings" class="card">
+    <h2>4. Mixed Earnings</h2>
+    <p>Employees may receive multiple forms of compensation. To accurately determine total earnings, all sources of income must be considered.</p>
+
+    <div class="box formula">
+      <div class="box-title">General Formula for Total Earnings</div>
+      <p>$$ \text{Total Earnings} = \text{Salary} + \text{Wages} + \text{Commission} + \text{Overtime Pay} $$</p>
+      <p><em>Note: Include only the components that apply to the specific employee.</em></p>
+    </div>
+
+    <div class="box example">
+      <div class="box-title">Example: Salary + Commission + Overtime</div>
+      <p>John receives: Salary = ₱25,000, Commission = ₱6,000, Overtime Pay = ₱1,500.</p>
+      <p>$$ \text{Total Earnings} = 25,000 + 6,000 + 1,500 = \text{₱}32,500 $$</p>
+    </div>
+  </section>
+
+  <!-- 5. Percentage -->
+  <section id="percentage" class="card">
+    <h2>5. Percentage Increase & Decrease</h2>
+
+    <h3>Percentage Increase</h3>
+    <p>Indicates how much a value has grown relative to its original value.</p>
+    <div class="box formula">
+      <div class="box-title">Formulas: Percentage Increase</div>
+      <p>$$ \text{Increase} = \text{New Value} - \text{Original Value} $$</p>
+      <p>$$ \text{Percentage Increase} = \left( \frac{\text{Increase}}{\text{Original Value}} \right) \times 100\% $$</p>
+      <p>$$ \text{Percentage Increase} = \left( \frac{\text{New Value} - \text{Original Value}}{\text{Original Value}} \right) \times 100\% $$</p>
+      <p>$$ \text{Shortcut: New Value} = \text{Original Value}(1 + \text{Rate}) $$</p>
+      <p>$$ \text{New Value (Shortcut)} = \text{Original Value} \times (1 + \text{Rate}) $$</p>
+    </div>
+
+    <h3>Percentage Decrease</h3>
+    <p>Tells us how much a quantity has decreased relative to its original value.</p>
+    <div class="box formula">
+      <div class="box-title">Formulas: Percentage Decrease</div>
+      <p>$$ \text{Decrease} = \text{Original Value} - \text{New Value} $$</p>
+      <p>$$ \text{Percentage Decrease} = \left( \frac{\text{Decrease}}{\text{Original Value}} \right) \times 100\% $$</p>
+      <p>$$ \text{Percentage Decrease} = \left( \frac{\text{Original Value} - \text{New Value}}{\text{Original Value}} \right) \times 100\% $$</p>
+      <p>$$ \text{Shortcut: New Value} = \text{Original Value}(1 - \text{Rate}) $$</p>
+      <p>$$ \text{New Value (Shortcut)} = \text{Original Value} \times (1 - \text{Rate}) $$</p>
+    </div>
+
+    <div class="box example">
+      <div class="box-title">Examples</div>
+      <p><strong>Increase:</strong> A worker's monthly salary increased from ₱18,000 to ₱21,600.</p>
+      <p>$$ \text{Increase} = 21,600 - 18,000 = 3,600 $$</p>
+      <p>$$ \text{Percentage Increase} = \left( \frac{3,600}{18,000} \right) \times 100\% = 20\% $$</p>
+      <br>
+      <p><strong>Decrease (Shortcut):</strong> A smartphone worth ₱15,000 is discounted by 20%.</p>
+      <p>$$ \text{New Price} = 15,000(1 - 0.20) = 15,000(0.80) = \text{₱}12,000 $$</p>
+    </div>
+  </section>
+
+  <!-- 6. Markups -->
+  <section id="markups-discounts" class="card">
+    <h2>6. Mark-Ups & Discounts</h2>
+    <p><strong>Mark-Up:</strong> The increase added to the cost of a product to determine its selling price.<br>
+      <strong>Discount:</strong> A reduction from the original selling price.</p>
+
+    <div class="term-group">
+      <div class="definition"><strong>Cost Price (CP)</strong><span>The amount paid by a seller to acquire a product.</span></div>
+      <div class="definition"><strong>Selling Price (SP)</strong><span>The amount at which a product is sold.</span></div>
+      <div class="definition"><strong>Mark-Up</strong><span>The amount added to the cost price to determine the selling price.</span></div>
+      <div class="definition"><strong>Discount</strong><span>The amount deducted from the original selling price.</span></div>
+    </div>
+
+    <div class="box formula">
+      <div class="box-title">Formulas - Mark-Up & Discount</div>
+      <p><strong>Mark-Up:</strong></p>
+      <p>$$ \text{Mark-Up} = \text{Cost Price} \times \text{Mark-Up Rate} $$</p>
+      <p>$$ \text{Selling Price} = \text{Cost Price} + \text{Mark-Up} = \text{Cost Price}(1 + \text{Mark-Up Rate}) $$</p>
+      <p>$$ \text{Selling Price} = \text{Cost Price} \times (1 + \text{Mark-Up Rate}) $$</p>
+      <p><strong>Discount:</strong></p>
+      <p>$$ \text{Discount} = \text{Original Price} \times \text{Discount Rate} $$</p>
+      <p>$$ \text{Discounted Price} = \text{Original Price} - \text{Discount} = \text{Original Price}(1 - \text{Discount Rate}) $$</p>
+      <p>$$ \text{Discounted Price} = \text{Original Price} \times (1 - \text{Discount Rate}) $$</p>
+    </div>
+
+    <div class="box example">
+      <div class="box-title">Examples</div>
+      <p><strong>Mark-Up:</strong> A gadget costs ₱5,000 and is marked up by 20%.</p>
+      <p>$$ \text{Selling Price} = 5,000(1 + 0.20) = 5,000(1.20) = \text{₱}6,000 $$</p>
+      <br>
+      <p><strong>Discount:</strong> A television priced at ₱25,000 is offered at a 20% discount.</p>
+      <p>$$ \text{Discounted Price} = 25,000(1 - 0.20) = 25,000(0.80) = \text{₱}20,000 $$</p>
+    </div>
+  </section>
+
+  <!-- 7. VAT -->
+  <section id="vat" class="card">
+    <h2>7. Value-Added Tax (VAT)</h2>
+    <p>Value-Added Tax (VAT) is a consumption tax added to the selling price of goods and services. In the Philippines, the standard VAT rate is generally 12%.</p>
+    <p>VAT is a consumption tax added to the selling price of goods and services. In the Philippines, standard VAT is generally 12%.</p>
+
+    <div class="box formula">
+      <div class="box-title">Formulas: VAT</div>
+      <p>$$ \text{VAT Amount} = \text{VAT-Exclusive Price} \times \text{VAT Rate} $$</p>
+      <p>$$ \text{VAT-Inclusive Price} = \text{VAT-Exclusive Price} + \text{VAT Amount} = \text{VAT-Exclusive Price}(1 + \text{VAT Rate}) $$</p>
+      <p>$$ \text{VAT-Inclusive Price} = \text{VAT-Exclusive Price} \times (1 + \text{VAT Rate}) $$</p>
+      <p>$$ \text{VAT-Exclusive Price} = \frac{\text{VAT-Inclusive Price}}{1 + \text{VAT Rate}} $$</p>
+    </div>
+
+    <div class="box example">
+      <div class="box-title">Examples - VAT</div>
+      <p><strong>Finding VAT-Inclusive Price:</strong> A laptop costs ₱25,000 before VAT. (VAT Rate = 12%)</p>
+      <p>$$ \text{VAT-Inclusive Price} = 25,000(1 + 0.12) = 25,000(1.12) = \text{₱}28,000 $$</p>
+      <br>
+      <p><strong>Finding VAT-Exclusive Price:</strong> A product's VAT-inclusive price is ₱5,600.</p>
+      <p>$$ \text{VAT-Exclusive Price} = \frac{5,600}{1.12} = \text{₱}5,000 $$</p>
+      <br>
+      <p><strong>Example: VAT (from terms)</strong> A laptop costs ₱25,000 before VAT. VAT Rate = 12%.</p>
+      <p>$$ \text{VAT-Inclusive Price} = 25,000 \times (1 + 0.12) = 25,000 \times 1.12 = \text{₱}28,000 $$</p>
+    </div>
+  </section>
+
+  <!-- 8. Profit Loss -->
+  <section id="profit-loss" class="card">
+    <h2>8. Profit and Loss</h2>
+    <p>Profit occurs when Selling Price (SP) &gt; Cost Price (CP). Loss occurs when Selling Price &lt; Cost Price.</p>
+    <p>A <strong>Profit</strong> occurs when Selling Price &gt; Cost Price. A <strong>Loss</strong> occurs when Selling Price &lt; Cost Price.</p>
+
+    <div class="box formula">
+      <div class="box-title">Formulas: Profit & Loss</div>
+      <p>$$ \text{Profit} = \text{Selling Price} - \text{Cost Price} $$</p>
+      <p>$$ \text{Loss} = \text{Cost Price} - \text{Selling Price} $$</p>
+      <p>$$ \text{Percentage Profit} = \left( \frac{\text{Profit}}{\text{Cost Price}} \right) \times 100\% $$</p>
+      <p>$$ \text{Percentage Loss} = \left( \frac{\text{Loss}}{\text{Cost Price}} \right) \times 100\% $$</p>
+      <p>$$ \text{Selling Price (using Profit Rate)} = \text{Cost Price}(1 + \text{Profit Rate}) $$</p>
+      <p>$$ \text{Selling Price (using Loss Rate)} = \text{Cost Price}(1 - \text{Loss Rate}) $$</p>
+    </div>
+  </section>
+
+  <!-- 9. Gross Net -->
+  <section id="gross-net" class="card">
+    <h2>9. Gross Income, Taxes & Net Income</h2>
+
+    <div class="term-group">
+      <div class="definition"><strong>Gross Income</strong><span>Total amount of money earned before any deductions are subtracted (Salary + Allowances + Overtime + Bonuses). Total amount = Salary + Allowances + Overtime + Bonuses.</span></div>
+      <div class="definition"><strong>Net Income</strong><span>The actual amount an employee receives after all mandatory and authorized deductions are subtracted (Take-Home Pay).</span></div>
+      <div class="definition"><strong>Mandatory Deductions</strong><span>Required by law (SSS, PhilHealth, Pag-IBIG, Income Tax).</span></div>
+      <div class="definition"><strong>Taxable Income</strong><span>The portion of income subject to income tax.</span></div>
+    </div>
+
+    <h3>Gross Income</h3>
+    <p>Gross income is the total amount of money earned before any deductions are subtracted. It includes Basic Salary, Wages, Overtime Pay, Commission, Bonuses, and Allowances.</p>
+    <div class="box formula">
+      <div class="box-title">Gross Income Formula</div>
+      <p>$$ \text{Gross Income} = \text{Basic Salary} + \text{Other Earnings} $$</p>
+      <p>$$ \text{Gross Income} = \text{Basic Salary} + \text{Overtime} + \text{Bonuses} + \text{Allowances} $$</p>
+    </div>
+
+    <h3>Mandatory Deductions & Income Tax</h3>
+    <p>Mandatory deductions are amounts required by law to be deducted before salary is released. Common deductions in the Philippines:</p>
+    <ul>
+      <li><strong>SSS (Social Security System)</strong> - Retirement, disability, maternity, sickness, death.</li>
+      <li><strong>PhilHealth</strong> - Health insurance and medical expenses.</li>
+      <li><strong>Pag-IBIG Fund (HDMF)</strong> - Housing loans, savings.</li>
+      <li><strong>Withholding Tax (Income Tax)</strong> - Advance payment of income tax based on taxable income.</li>
+    </ul>
+
+    <div class="box formula">
+      <div class="box-title">Formulas: Taxes and Deductions</div>
+      <p>$$ \text{Income Tax} = \text{Taxable Income} \times \text{Tax Rate} $$</p>
+      <p>$$ \text{Total Deductions} = \text{Mandatory Deductions} + \text{Authorized Deductions} $$</p>
+      <p>$$ \text{Net Income (Take-Home Pay)} = \text{Gross Income} - \text{Total Deductions} $$</p>
+      <p>$$ \text{Net Income} = \text{Gross Income} - \text{Total Deductions} $$</p>
+    </div>
+
+    <div class="box example">
+      <div class="box-title">Example: Comprehensive Net Income</div>
+      <p>Gross Income = ₱35,000. Deductions: SSS = ₱900, PhilHealth = ₱500, Pag-IBIG = ₱200. Tax Rate = 10%.</p>
+      <p><strong>Step 1: Compute Tax</strong></p>
+      <p>$$ \text{Tax} = 35,000 \times 0.10 = 3,500 $$</p>
+      <p><strong>Step 2: Total Deductions</strong></p>
+      <p>$$ \text{Total Deductions} = 900 + 500 + 200 + 3,500 = 5,100 $$</p>
+      <p><strong>Step 3: Net Income</strong></p>
+      <p>$$ \text{Net Income} = 35,000 - 5,100 = \text{₱}29,900 $$</p>
+    </div>
+  </section>
+
+  <!-- 10. Payroll -->
+  <section id="payroll" class="card">
+    <h2>10. Payroll Analysis</h2>
+    <p>Payroll analysis is the examination of payroll records to verify that employee earnings and deductions are correctly computed.</p>
+
+    <div class="box example">
+      <div class="box-title">Payroll Case Study Example</div>
+      <p>ABC Trading Company provides the following payroll information:</p>
+      <ul>
+        <li>Monthly Salary: ₱28,000</li>
+        <li>Overtime Pay: ₱2,500</li>
+        <li>Bonus: ₱1,500</li>
+        <li>Transportation Allowance: ₱1,000</li>
+      </ul>
+      <p>Deductions: SSS (₱900), PhilHealth (₱600), Pag-IBIG (₱200), Income Tax (₱1,500), Cooperative Loan (₱800).</p>
+
+      <p><strong>Step 1: Gross Income</strong></p>
+      <p>$$ \text{Gross Income} = 28,000 + 2,500 + 1,500 + 1,000 = \text{₱}33,000 $$</p>
+      <p><strong>Step 2: Total Deductions</strong></p>
+      <p>$$ \text{Total Deductions} = 900 + 600 + 200 + 1,500 + 800 = \text{₱}4,000 $$</p>
+      <p><strong>Step 3: Net Income</strong></p>
+      <p>$$ \text{Net Income} = 33,000 - 4,000 = \text{₱}29,000 $$</p>
+      <hr style="border:none; border-top:1px solid #232732; margin:12px 0;">
+      <p><strong>Case Study (Detailed Format from terms.html):</strong></p>
+      <ul>
+        <li>Monthly Salary: ₱28,000 | Overtime Pay: ₱2,500 | Bonus: ₱1,500 | Allowance: ₱1,000</li>
+        <li>SSS: ₱900 | PhilHealth: ₱600 | Pag-IBIG: ₱200 | Tax: ₱1,500 | Loan: ₱800</li>
+      </ul>
+      <p><strong>Step 1: Gross Income</strong><br>$$ 28,000 + 2,500 + 1,500 + 1,000 = \text{₱}33,000 $$</p>
+      <p><strong>Step 2: Total Deductions</strong><br>$$ 900 + 600 + 200 + 1,500 + 800 = \text{₱}4,000 $$</p>
+      <p><strong>Step 3: Net Income</strong><br>$$ 33,000 - 4,000 = \text{₱}29,000 $$</p>
+    </div>
+
+    <div class="box reminder">
+      <div class="box-title">Important Reminders - Payroll</div>
+      <ul>
+        <li>✔ Compute gross income before deductions.</li>
+        <li>✔ Verify every earning listed in the payroll.</li>
+        <li>✔ Check calculations for accuracy before approving payment.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 11. Patterns -->
+  <section id="patterns" class="card">
+    <h2>11. Patterns (Numerical & Visual)</h2>
+    <p>A pattern is a repeated or organized arrangement of shapes, colors, symbols, or numbers that follows a recognizable rule.</p>
+    <p>A pattern is a repeated or organized arrangement of shapes, colors, objects, symbols, sounds, or numbers that follows a recognizable rule.</p>
+
+    <div class="term-group">
+      <div class="definition"><strong>Visual Pattern</strong><span>Arrangements of shapes/colors following a rule (e.g. Repeating, Growing, Symmetrical, Tessellation).</span></div>
+      <div class="definition"><strong>Numerical Pattern</strong><span>Arrangement of numbers following a specific rule or relationship (e.g. Addition, Multiplication).</span></div>
+      <div class="definition"><strong>Sequence</strong><span>An ordered list of numbers arranged according to a specific rule.</span></div>
+      <div class="definition"><strong>Series</strong><span>The sum of the terms of a sequence (using plus signs instead of commas).</span></div>
+    </div>
+
+    <h3>Types of Numerical Patterns</h3>
+    <ul>
+      <li><strong>Addition Pattern:</strong> Each term increases by adding the same number. <em>(e.g., 10, 15, 20... Rule: +5)</em></li>
+      <li><strong>Subtraction Pattern:</strong> Each term decreases by the same amount. <em>(e.g., 40, 35, 30... Rule: -5)</em></li>
+      <li><strong>Multiplication Pattern:</strong> Each term is multiplied by the same number. <em>(e.g., 2, 4, 8... Rule: ×2)</em></li>
+      <li><strong>Division Pattern:</strong> Each term is divided by the same number. <em>(e.g., 81, 27, 9... Rule: ÷3)</em></li>
+      <li><strong>Alternating Pattern:</strong> Two different rules repeat alternately. <em>(e.g., +3, -1, +3, -1)</em></li>
+      <li><strong>Square Number Pattern:</strong> Multiplied by itself. <em>(1, 4, 9, 16, 25)</em></li>
+      <li><strong>Triangular Number Pattern:</strong> Add consecutive whole numbers. <em>(1, 3, 6, 10, 15)</em></li>
+    </ul>
+
+    <h3>Visual Patterns</h3>
+    <p>Arrangements of shapes, colors, or symbols following a specific rule (Repeating, Growing, Shrinking, Rotational, Symmetrical, Tessellation).</p>
+  </section>
+
+  <!-- 12. Fibonacci -->
+  <section id="fibonacci" class="card">
+    <h2>12. The Fibonacci Sequence</h2>
+    <p>The Fibonacci sequence is a sequence of numbers in which each term is obtained by adding the two previous terms. It starts with 0 and 1.</p>
+    <p>A sequence of numbers in which each term is obtained by adding the two previous terms.</p>
+
+    <div class="box formula">
+      <div class="box-title">Fibonacci Rule</div>
+      <p>$$ \text{Sequence: } 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ... $$</p>
+      <p>$$ \text{Formula: } F_n = F_{n-1} + F_{n-2} $$</p>
+      <p>$$ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ... $$</p>
+    </div>
+
+    <p>Found abundantly in nature (sunflower seeds, pinecones, tree branches, shells, flower petals).</p>
+    <p><em>Found in nature:</em> Sunflowers, pinecones, flower petals, shells, tree branches.</p>
+  </section>
+
+  <!-- 13. Sequences and Series -->
+  <section id="sequences-series" class="card">
+    <h2>13. Sequences and Series</h2>
+
+    <h3>What is a Sequence?</h3>
+    <p>An ordered list of numbers that follows a specific rule or pattern. Each number is called a <strong>term</strong>. <em>(e.g., 2, 4, 6, 8, 10)</em></p>
+    <ul>
+      <li><strong>Finite Sequence:</strong> Has a definite beginning and end (e.g., 4, 8, 12, 16, 20).</li>
+      <li><strong>Infinite Sequence:</strong> Continues forever (e.g., 2, 4, 6, 8, ...).</li>
+    </ul>
+
+    <h3>What is a Series?</h3>
+    <p>A series is the <strong>sum</strong> of the terms of a sequence. Instead of commas, terms are connected using addition.</p>
+    <ul>
+      <li><strong>Sequence:</strong> 5, 10, 15, 20</li>
+      <li><strong>Series:</strong> 5 + 10 + 15 + 20</li>
+    </ul>
+
+    <h3>Recursive vs Explicit Rules</h3>
+    <p><strong>Recursive Rule:</strong> Explains how each term is generated from the previous term(s). Requires a starting value.<br>
+      <strong>Explicit Rule:</strong> Gives a direct formula for finding any term without calculating previous terms.</p>
+
+    <div class="table-wrap"><table>
+      <tr><th>Recursive Rule</th><th>Explicit Rule</th></tr>
+      <tr><td>Explains how each term is generated from the previous term(s).</td><td>Gives a direct formula for finding any term without previous terms.</td></tr>
+      <tr><td>Requires an initial term.</td><td>Does not require starting value to jump to the Nth term.</td></tr>
+      <tr><td>Example: First term = 4, Add 4 each time.</td><td>Example: \( \text{Term} = 4 \times (\text{position number}) \)</td></tr>
+    </table></div>
+  </section>
+
+  <!-- 14. Arithmetic -->
+  <section id="arithmetic" class="card">
+    <h2>14. Arithmetic Sequence & Series</h2>
+
+    <div class="term-group">
+      <div class="definition"><strong>Arithmetic Sequence</strong><span>A sequence where the difference between consecutive terms is always the same.</span></div>
+      <div class="definition"><strong>Common Difference (\(d\))</strong><span>The constant amount added to or subtracted from each term.</span></div>
+      <div class="definition"><strong>Arithmetic Series</strong><span>The sum of all the terms of an arithmetic sequence.</span></div>
+    </div>
+
+    <h3>Arithmetic Sequence</h3>
+    <p>A sequence in which the difference between consecutive terms is always the same. This constant is called the <strong>common difference (\(d\))</strong>.</p>
+
+    <div class="box formula">
+      <div class="box-title">Arithmetic Sequence Formulas</div>
+      <p>$$ d = a_{n+1} - a_n $$</p>
+      <p><strong>\(n\)th Term Formula:</strong></p>
+      <p>$$ a_n = a_1 + (n - 1)d $$</p>
+      <p><em>Where \(a_n\) is the \(n\)th term, \(a_1\) is the first term, \(n\) is the position, and \(d\) is the common difference.</em></p>
+    </div>
+
+    <div class="box example">
+      <div class="box-title">Example: Finding the \(n\)th term</div>
+      <p>Find the 15th term of the sequence: 4, 7, 10, 13, ...</p>
+      <p>Given: \(a_1 = 4, d = 3, n = 15\)</p>
+      <p>$$ a_{15} = 4 + (15 - 1)(3) $$</p>
+      <p>$$ a_{15} = 4 + (14)(3) = 4 + 42 = 46 $$</p>
+    </div>
+
+    <h3>Arithmetic Series</h3>
+    <p>The sum of all the terms of an arithmetic sequence.</p>
+
+    <div class="box formula">
+      <div class="box-title">Arithmetic Series Formulas</div>
+      <p><strong>When last term (\(a_n\)) is known:</strong></p>
+      <p>$$ S_n = \frac{n}{2}(a_1 + a_n) $$</p>
+      <p><strong>Alternative (When last term is unknown):</strong></p>
+      <p>$$ S_n = \frac{n}{2}[2a_1 + (n - 1)d] $$</p>
+      <p><strong>To find the number of terms (\(n\)):</strong></p>
+      <p>$$ n = \frac{a_n - a_1}{d} + 1 $$</p>
+      <p>$$ n = \left(\frac{a_n - a_1}{d}\right) + 1 $$</p>
+      <p><strong>If First & Last Term known:</strong> $$ S_n = \frac{n}{2}(a_1 + a_n) $$</p>
+      <p><strong>If Last Term unknown:</strong> $$ S_n = \frac{n}{2}[2a_1 + (n - 1)d] $$</p>
+    </div>
+
+    <div class="box example">
+      <div class="box-title">Example: Sum of an Arithmetic Series</div>
+      <p>A theater has 25 seats in the first row. Each succeeding row has 4 more seats. There are 12 rows. Find the total seats.</p>
+      <p>Given: \(a_1 = 25, d = 4, n = 12\)</p>
+      <p>Find \(a_{12}\): $$ a_{12} = 25 + 11(4) = 69 $$</p>
+      <p>Compute Sum: $$ S_{12} = \frac{12}{2}(25 + 69) = 6(94) = 564 \text{ seats} $$</p>
+      <p>Find last term: \( a_{12} = 25 + 11(4) = 69 \) — Find sum: $$ S_{12} = \frac{12}{2}(25 + 69) = 6(94) = 564 \text{ seats} $$</p>
+    </div>
+  </section>
+
+  <!-- 15. Geometric -->
+  <section id="geometric" class="card">
+    <h2>15. Geometric Sequence & Series</h2>
+
+    <div class="term-group">
+      <div class="definition"><strong>Geometric Sequence</strong><span>A sequence where each term is obtained by multiplying the previous term by the same constant. A sequence where each term is obtained by multiplying the previous term by the same non-zero constant called the common ratio.</span></div>
+      <div class="definition"><strong>Common Ratio (\(r\))</strong><span>The non-zero constant used to multiply each term.</span></div>
+      <div class="definition"><strong>Geometric Series</strong><span>The sum of the terms of a geometric sequence.</span></div>
+    </div>
+
+    <h3>Geometric Sequence</h3>
+    <p>A sequence in which each term is obtained by multiplying or dividing the previous term by the same non-zero constant called the <strong>common ratio (\(r\))</strong>.</p>
+
+    <div class="box formula">
+      <div class="box-title">Geometric Sequence Formulas</div>
+      <p>$$ r = \frac{a_{n+1}}{a_n} $$</p>
+      <p><strong>\(n\)th Term Formula:</strong></p>
+      <p>$$ a_n = a_1 (r)^{n-1} $$</p>
+    </div>
+
+    <div class="box example">
+      <div class="box-title">Example: Finding the \(n\)th term</div>
+      <p>Find the 8th term. Sequence: 4, 12, 36, 108, ...</p>
+      <p>Given: \(a_1 = 4, r = 3, n = 8\)</p>
+      <p>$$ a_8 = 4(3)^{8-1} = 4(3)^7 = 4(2187) = 8748 $$</p>
+    </div>
+
+    <h3>Geometric Series</h3>
+    <p>The sum of the terms of a geometric sequence.</p>
+
+    <div class="box formula">
+      <div class="box-title">Geometric Series Formulas</div>
+      <p><strong>When \(r > 1\) or generally \(r \neq 1\):</strong></p>
+      <p>$$ S_n = \frac{a_1(r^n - 1)}{r - 1} $$</p>
+      <p><strong>When \(0 < r < 1\) (Alternative form):</strong></p>
+      <p>$$ S_n = \frac{a_1(1 - r^n)}{1 - r} $$</p>
+      <p><strong>For \(r > 1\) (Growth):</strong> $$ S_n = \frac{a_1(r^n - 1)}{r - 1} $$</p>
+      <p><strong>For \(0 < r < 1\) (Decay):</strong> $$ S_n = \frac{a_1(1 - r^n)}{1 - r} $$</p>
+    </div>
+
+    <div class="box example">
+      <div class="box-title">Example: Sum of a Geometric Series - Growth</div>
+      <p>A bacterial culture starts with 100 bacteria. The population doubles every hour. Find total counted during the first 6 hours.</p>
+      <p>Given: \(a_1 = 100, r = 2, n = 6\)</p>
+      <p>$$ S_6 = \frac{100(2^6 - 1)}{2 - 1} = 100(64 - 1) = 100(63) = 6,300 \text{ bacteria} $$</p>
+    </div>
+
+    <div class="box example">
+      <div class="box-title">Example: Depreciation (Decay Series)</div>
+      <p>A machine loses 20% of its value every year. Its value during the first year is ₱100,000. Find the total value accumulated over 4 years.</p>
+      <p>Since it loses 20%, it retains 80%. Ratio \(r = 0.80\).</p>
+      <p>Given: \(a_1 = 100,000\), \(r = 0.8\), \(n = 4\)</p>
+      <p>$$ S_4 = \frac{100,000(1 - 0.8^4)}{1 - 0.8} $$</p>
+      <p>$$ S_4 = \frac{100,000(1 - 0.4096)}{0.2} = \frac{100,000(0.5904)}{0.2} = 295,200 $$</p>
+      <p><em>Answer: ₱295,200</em></p>
+    </div>
+
+    <div class="box reminder">
+      <div class="box-title">Exponential Growth vs Decay</div>
+      <ul>
+        <li><strong>Growth (\(r > 1\)):</strong> Population growth, investment growth, compound interest. Values increase rapidly.</li>
+        <li><strong>Decay (\(0 < r < 1\)):</strong> Depreciation, radioactive decay. Values decrease over time.</li>
+      </ul>
+    </div>
+
+    <div class="box reminder">
+      <div class="box-title">Arithmetic vs Geometric</div>
+      <p>✔ <strong>Arithmetic vs Geometric:</strong> Arithmetic is additive (fixed increase/decrease like salary raise). Geometric is multiplicative (percentage increase/decrease like compound interest, population growth).</p>
+    </div>
+  </section>
+
+  <div class="card" style="text-align:center; padding: 16px;">
+    <p style="margin:0; color:#7a7f8c; font-size:12px;">End of Module • Combined from formulas.html + terms.html • All content preserved • Built for iPad Air 1 iPadOS 12 • Dark Mode CSS2015 • © 2026</p>
+  </div>
+
+</main>
+
+<script>
+// iPad Air 1 / iOS12 optimized JS - no ES6 arrow, no let/const for max compat, but use safe ES5
+(function(){
+  var sidebar = document.getElementById('sidebar');
+  var menuBtn = document.getElementById('menuBtn');
+  var overlay = document.getElementById('overlay');
+
+  function openMenu(){
+    if(sidebar) {
+      sidebar.className = sidebar.className.replace(' open','') + ' open';
+      sidebar.classList ? sidebar.classList.add('open') : (sidebar.className += ' open');
+    }
+    if(overlay) {
+      overlay.className = 'active';
+      overlay.style.display = 'block';
+    }
+  }
+  function closeMenu(){
+    if(sidebar) {
+      if(sidebar.classList) sidebar.classList.remove('open');
+      sidebar.className = sidebar.className.replace(' open','').replace('open','').trim();
+    }
+    if(overlay) {
+      overlay.className = '';
+      overlay.style.display = 'none';
+    }
+  }
+  function toggleMenu(){
+    if(sidebar && sidebar.className.indexOf('open') !== -1) closeMenu();
+    else openMenu();
+  }
+
+  if(menuBtn){
+    menuBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      toggleMenu();
+    }, false);
+    menuBtn.addEventListener('touchend', function(e){
+      e.preventDefault();
+      toggleMenu();
+    }, false);
+  }
+  if(overlay){
+    overlay.addEventListener('click', closeMenu, false);
+    overlay.addEventListener('touchend', function(e){ e.preventDefault(); closeMenu(); }, false);
+  }
+
+  // Close menu when link clicked (iPad)
+  var links = sidebar ? sidebar.getElementsByTagName('a') : [];
+  for(var i=0;i<links.length;i++){
+    links[i].addEventListener('click', function(){
+      if(window.innerWidth <= 1024) {
+        setTimeout(closeMenu, 150);
+      }
+    }, false);
+  }
+
+  // Typeset MathJax after load, low priority for iPad Air 1
+  function typesetMath(){
+    if(window.MathJax && window.MathJax.typesetPromise){
+      window.MathJax.startup.promise.then(function(){
+        return window.MathJax.typesetPromise();
+      }).then(function(){}, function(err){ console.log('MathJax error', err); });
+    } else if(window.MathJax && window.MathJax.Hub){
+      window.MathJax.Hub.Queue(["Typeset", window.MathJax.Hub]);
+    }
+  }
+
+  // Defer typeset to not block first paint on A7
+  if(document.readyState === 'complete'){
+    setTimeout(typesetMath, 300);
+  } else {
+    window.addEventListener('load', function(){ setTimeout(typesetMath, 400); }, false);
+  }
+
+  // Smooth scroll polyfill for iOS12 - use native
+  var allAnchors = document.querySelectorAll('a[href^="#"]');
+  for(var j=0;j<allAnchors.length;j++){
+    allAnchors[j].addEventListener('click', function(e){
+      var href = this.getAttribute('href');
+      if(href.length > 1){
+        var target = document.getElementById(href.substring(1));
+        if(target){
+          e.preventDefault();
+          var top = target.offsetTop - 10;
+          if(window.innerWidth <= 1024) top -= 50;
+          window.scrollTo(0, top);
+          // update hash without jump
+          if(history.pushState) history.pushState(null, null, href);
+        }
+      }
+    }, false);
+  }
+
+})();
+</script>
+</body>
+</html>
